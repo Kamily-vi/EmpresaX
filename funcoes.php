@@ -6,21 +6,37 @@ function lerArquivo($nomeArquivo){
     $arquivo = file_get_contents($nomeArquivo);
 
 
-    $jsonArray = json_decode($arquivo);
+    $arquivoArr = json_decode($arquivo);
  
-    return $jsonArray;
+    return $arquivoArr;
 }
 
 
 
-function buscarFuncionario($funcionarios, $nome){
+function buscarFuncionario($funcionarios, $filtro){
 
     $funcionariosFiltro = [];
     foreach ($funcionarios as $funcionario) {
-        if($funcionario-> first_name == $nome){
+        if(
+            strpos($funcionario->first_name, $filtro) !== false
+            || 
+            strpos($funcionario->last_name, $filtro) !== false
+            ||
+            strpos($funcionario->department, $filtro) !== false
+            ){
             $funcionariosFiltro[] = $funcionario;
         }
     }
+    return $funcionarioFiltro;
+}
 
-    return $funcionariosFiltro;
+function adicionarFuncionario($nomeArquivo, $novoFuncionario){
+
+    $funcionarios = lerArquivo($nomeArquivo);
+
+    $funcionarios[] = $novoFuncionario;
+
+    $json = json_decode($funcionarios);
+
+    file_put_contents($nomeArquivo, $json);
 }
