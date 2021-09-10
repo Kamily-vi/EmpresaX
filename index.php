@@ -61,6 +61,8 @@ if (isset($_GET["filtro"]) && $_GET["filtro"] != "") {
         <th>Endereço IP</th>
         <th>País</th>
         <th>Departamento</th>
+        <th>Editar</th>
+        <th>Excluir</th>
         
         
       </tr>
@@ -76,6 +78,10 @@ if (isset($_GET["filtro"]) && $_GET["filtro"] != "") {
           <td><?= $funcionario->ip_address ?></td>
           <td><?= $funcionario->country ?> </td>
           <td><?= $funcionario->department ?></td>
+          <td> <button class="editar">&#9999;</button> </td>
+          <td> <button onclick="deletar(<?= $funcionario->id ?>)" class="excluir">&#128465;</button> </td>
+
+    
         </tr>
       <?php
       endforeach;
