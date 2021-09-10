@@ -6,9 +6,9 @@ function lerArquivo($nomeArquivo){
     $arquivo = file_get_contents($nomeArquivo);
 
 
-    $arquivoArr = json_decode($arquivo);
+    $arquivoArray = json_decode($arquivo);
  
-    return $arquivoArr;
+    return $arquivoArray;
 }
 
 
@@ -27,7 +27,7 @@ function buscarFuncionario($funcionarios, $filtro){
             $funcionariosFiltro[] = $funcionario;
         }
     }
-    return $funcionarioFiltro;
+    return $funcionariosFiltro;
 }
 
 function adicionarFuncionario($nomeArquivo, $novoFuncionario){
@@ -36,7 +36,7 @@ function adicionarFuncionario($nomeArquivo, $novoFuncionario){
 
     $funcionarios[] = $novoFuncionario;
 
-    $json = json_decode($funcionarios);
+    $json = json_encode($funcionarios);
 
     file_put_contents($nomeArquivo, $json);
 }

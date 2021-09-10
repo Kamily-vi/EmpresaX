@@ -13,6 +13,7 @@ $novoFuncionario = [
     "department" => $_POST["department"]
 ];
 
-adicionarFuncionario("./dados/empresaX.json", $novoFuncionario);
+
+adicionarFuncionario("./dados/funcionarios.json", $novoFuncionario);
 
 header("location: index.php");
