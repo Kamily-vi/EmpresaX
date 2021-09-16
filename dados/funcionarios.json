@@ -9988,15 +9988,5 @@
         "ip_address": "224.42.1.253",
         "country": "China",
         "department": "Support"
-    },
-    {
-        "id": 1001,
-        "first_name": "Rafael",
-        "last_name": "Leme",
-        "email": "rafanleme@gmail.com",
-        "gender": "Male",
-        "ip_address": "192.168.0.9",
-        "country": "Brazil",
-        "department": "TI"
     }
 ]

@@ -13,6 +13,12 @@ function deletar(idFuncionario){
     }
 }
 
+function editar(idFuncionario){
+    //Teste de recebimento
+    //alert(idFuncionarios);
+    window.location ="editar.php?id=" + idFuncionario;
+}
+
 document.getElementById("btnAddFuncionario")
     .addEventListener("click", showModal);
 
